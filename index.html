@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+
+	<div class="wrapper">
+		<header class="header">
+			<p class="welcome-message">Hi Bobby! Willkommen zurück zu RantWhere.</p>
+		</header>
+		<div class="survey-box">
+			<div class="survey-content">
+				<p class="survey-text">Wie wahrscheinlich (1-10) ist es, dass Sie uns weiterempfehlen werden?</p>
+
+				<div class="ratings">
+					<p class="survey-text">Gering</p>
+
+					<div class="radio-form">
+						<input type="radio" id="1" name="rating" value="1">
+						<label for="1">1</label>
+						<input type="radio" id="2" name="rating" value="2">
+						<label for="2">2</label>
+						<input type="radio" id="3" name="rating" value="3">
+						<label for="3">3</label>
+						<input type="radio" id="4" name="rating" value="4">
+						<label for="4">4</label>
+						<input type="radio" id="5" name="rating" value="5">
+						<label for="5">5</label>
+						<input type="radio" id="6" name="rating" value="6">
+						<label for="6">6</label>
+						<input type="radio" id="7" name="rating" value="7">
+						<label for="7">7</label>
+						<input type="radio" id="8" name="rating" value="8">
+						<label for="8">8</label>
+						<input type="radio" id="9" name="rating" value="9">
+						<label for="9">9</label>
+						<input type="radio" id="10" name="rating" value="10">
+						<label for="10">10</label>
+					</div>
+					<p class="survey-text">hoch</p>
+				</div>
+			</div>
+		</div>
+
+		<button onclick="numberChosen()"> REPLACE HTML </button>
+
+	</div>
+
+
+
+	<script>
+
+
+		function numberChosen() {
+			const oldText = document.querySelector(".survey-content");
+			console.log(oldText)
+			const newText = document.createElement("div")
+
+			newText.innerHTML =
+				'<p>This is a new Text </p>'
+
+			oldText.replaceWith(newText)
+
+			function sayHello() {
+				console.log("na  world")
+			}
+		}
+	</script>
+
+</body>
+
+</html>
