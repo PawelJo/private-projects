@@ -169,3 +169,10 @@ input[type="radio"]:checked+label {
 	display: flex;
 	justify-content: space-between;
 }
+
+button {
+	background-color: #000;
+	color: #fff;
+	border-radius: 20px;
+	width: 50%;
+}

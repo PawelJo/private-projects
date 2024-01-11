@@ -51,6 +51,7 @@
 		</div>
 
 		<button onclick="numberChosen()"> REPLACE HTML now </button>
+		<button onclick="goToCountDown()"> Go to counter </button>
 
 	</div>
 
@@ -58,6 +59,9 @@
 
 	<script>
 
+		function goToCountDown() {
+			window.location.replace(" http://127.0.0.1:5500/countdown.html");
+		}
 
 		function numberChosen() {
 			const oldText = document.querySelector(".survey-content");
@@ -65,7 +69,7 @@
 			const newText = document.createElement("div")
 
 			newText.innerHTML =
-				'<p>This is a new Text </p>'
+				'<p class="survey-text">This is a new Text </p>'
 
 			oldText.replaceWith(newText)
 
