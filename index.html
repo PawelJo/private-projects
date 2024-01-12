@@ -100,16 +100,22 @@
 			counter.innerHTML = '<div id="countdown"></div>'
 
 			const ratingSelectedText = document.createElement('p')
-			ratingSelectedText.innerHTML = '<p class="survey-text">Du hast uns mit</p>' + capturedRating + '<p class="survey-text"> bewertet.</p>' + '<a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a>'
+			ratingSelectedText.innerHTML =
+
+				/* 				'`<p class="survey-text">`Du hast uns mit ${capturedRating} bewertet.+ <a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a></p>`' */
+
+
+				'<p class="survey-text">Du hast uns mit ' + capturedRating + ' bewertet. <a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a></p>'
 
 			oldText.replaceWith(newText, ratingSelectedText, counter)
 
+			console.log(`Du hast uns mit ${capturedRating} bewertet.`)
 
-			var timeleft = 10;
-			var downloadTimer = setInterval(function () {
+			let timeleft = 3;
+			const downloadTimer = setInterval(function () {
 				if (timeleft <= 0) {
 					clearInterval(downloadTimer);
-					window.location.replace("http://127.0.0.1:5500/index.html");
+					window.location.replace("http://127.0.0.1:5500/evaluation.html");
 					console.log("Rating of" + capturedRating + "will be submitted now")
 				} else {
 					document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
