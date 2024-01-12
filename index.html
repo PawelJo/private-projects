@@ -23,35 +23,35 @@
 				<div class="ratings">
 					<p class="survey-text">Gering</p>
 
-					<div class="radio-form">
-						<input type="radio" id="1" name="rating" value="1">
+					<form class="radio-form">
+						<input type="radio" id="1" name="rating" value="1" onclick="numberChosen()">
 						<label for="1">1</label>
-						<input type="radio" id="2" name="rating" value="2">
+						<input type="radio" id="2" name="rating" value="2" onclick="numberChosen()">
 						<label for="2">2</label>
-						<input type="radio" id="3" name="rating" value="3">
+						<input type="radio" id="3" name="rating" value="3" onclick="numberChosen()">
 						<label for="3">3</label>
-						<input type="radio" id="4" name="rating" value="4">
+						<input type="radio" id="4" name="rating" value="4" onclick="numberChosen()">
 						<label for="4">4</label>
-						<input type="radio" id="5" name="rating" value="5">
+						<input type="radio" id="5" name="rating" value="5" onclick="numberChosen()">
 						<label for="5">5</label>
-						<input type="radio" id="6" name="rating" value="6">
+						<input type="radio" id="6" name="rating" value="6" onclick="numberChosen()">
 						<label for="6">6</label>
-						<input type="radio" id="7" name="rating" value="7">
+						<input type="radio" id="7" name="rating" value="7" onclick="numberChosen()">
 						<label for="7">7</label>
-						<input type="radio" id="8" name="rating" value="8">
+						<input type="radio" id="8" name="rating" value="8" onclick="numberChosen()">
 						<label for="8">8</label>
-						<input type="radio" id="9" name="rating" value="9">
+						<input type="radio" id="9" name="rating" value="9" onclick="numberChosen()">
 						<label for="9">9</label>
-						<input type="radio" id="10" name="rating" value="10">
+						<input type="radio" id="10" name="rating" value="10" onclick="numberChosen()">
 						<label for="10">10</label>
-					</div>
+					</form>
 					<p class="survey-text">hoch</p>
 				</div>
 			</div>
 		</div>
 
 		<button onclick="numberChosen()"> REPLACE HTML now </button>
-		<button onclick="goToCountDown()"> Go to counter </button>
+		<!-- <button onclick="goToCountDown()"> Go to counter </button> -->
 
 	</div>
 
@@ -59,23 +59,64 @@
 
 	<script>
 
-		function goToCountDown() {
-			window.location.replace(" http://127.0.0.1:5500/countdown.html");
-		}
+
+
+
+		/* 		function captureRating() {
+					const capturedRating = document.querySelector('input[name="rating"]:checked').value;
+					return capturedRating
+		
+				} */
+
+
+
+
+
+
+
+
+		/* Little helper function for testing */
+		/* 		function goToCountDown() {
+					e.preventDefault();
+					window.location.replace(" http://127.0.0.1:5500/countdown.html");
+				} */
 
 		function numberChosen() {
+
+			const capturedRating =
+
+				document.querySelector('input[name="rating"]:checked').value;
+
+			console.log(capturedRating)
+
 			const oldText = document.querySelector(".survey-content");
-			console.log(oldText)
+			/* console.log(oldText) */
 			const newText = document.createElement("div")
 
 			newText.innerHTML =
-				'<p class="survey-text">This is a new Text </p>'
+				'<p class="survey-text">Danke für Ihre Bewertung. Teilen Sie uns gerne mit, was noch verbessert werden muss.</p>'
 
-			oldText.replaceWith(newText)
+			const counter = document.createElement('div');
+			counter.innerHTML = '<div id="countdown"></div>'
 
-			function sayHello() {
-				console.log("na  world")
-			}
+			const ratingSelectedText = document.createElement('p')
+			ratingSelectedText.innerHTML = '<p class="survey-text">Du hast uns mit</p>' + capturedRating + '<p class="survey-text"> bewertet.</p>' + '<a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a>'
+
+			oldText.replaceWith(newText, ratingSelectedText, counter)
+
+
+			var timeleft = 10;
+			var downloadTimer = setInterval(function () {
+				if (timeleft <= 0) {
+					clearInterval(downloadTimer);
+					window.location.replace("http://127.0.0.1:5500/index.html");
+					console.log("Rating of" + capturedRating + "will be submitted now")
+				} else {
+					document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+				}
+				timeleft -= 1;
+			}, 1000);
+
 		}
 	</script>
 
