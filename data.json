@@ -1,17 +1,17 @@
 [
-	{
-		"id": 1,
-		"name": "Bobby Draper",
-		"rating": null
-	},
-	{
-		"id": 2,
-		"name": "Camina Drummer",
-		"rating": null
-	},
-	{
-		"id": 3,
-		"name": "Ali Bumaye",
-		"rating": null
-	}
+    {
+        "id": 1,
+        "name": "Bobby Draper",
+        "rating": 0
+    },
+    {
+        "id": 2,
+        "name": "Camina Drummer",
+        "rating": 10
+    },
+    {
+        "id": 3,
+        "name": "Ali Bumaye",
+        "rating": 4
+    }
 ]

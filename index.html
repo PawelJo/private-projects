@@ -53,6 +53,8 @@
 		<button onclick="numberChosen()"> REPLACE HTML now </button>
 		<!-- <button onclick="goToCountDown()"> Go to counter </button> -->
 
+		<button onClick="postRating()">Send it Homie</button>
+
 	</div>
 
 
@@ -67,13 +69,6 @@
 					return capturedRating
 		
 				} */
-
-
-
-
-
-
-
 
 		/* Little helper function for testing */
 		/* 		function goToCountDown() {
@@ -93,8 +88,10 @@
 		} */
 
 
-		var userID = ""
+		var userID = null
 		let randomUser = "";
+		/* let rating = null; */
+		let capturedRating = null
 
 		async function getRandomUser() {
 			const response = await
@@ -118,19 +115,43 @@
 			}
 			const greeting = document.querySelector(".welcome-message")
 			greeting.innerHTML = `<p class="welcome-message">Hi ${randomUser.name} ! Willkommen zurück zu RantWhere.</p>`
+
 			window.userID = randomUser.id
-
-
+			/* console.log(window.userID) */
 		})
 
+		console.log(userID)
+
+		function postRating() {
+			fetch('http://localhost:8080', {
+				method: 'POST',
+				mode: 'cors',
+				body: JSON.stringify({
+					id: userID,
+					name: randomUser.name,
+					rating: parseInt(capturedRating)
+				}),
+				headers: {
+					"Content-type": "application/json"
+				}
+
+			})
+				.then(res => res.json())
+				.then(data => console.log(data))
+				.catch(err => console.log(err))
+			console.log("Fire awayy")
+			console.log(userID)
+			console.log(randomUser.name)
+			console.log(capturedRating)
+		}
 
 		function numberChosen() {
 
-			const capturedRating =
+			capturedRating =
 
 				document.querySelector('input[name="rating"]:checked').value;
 
-			console.log(capturedRating)
+			/* console.log(capturedRating) */
 
 			const oldText = document.querySelector(".survey-content");
 			/* console.log(oldText) */
@@ -158,8 +179,16 @@
 			const downloadTimer = setInterval(function () {
 				if (timeleft <= 0) {
 					clearInterval(downloadTimer);
-					window.location.replace("http://127.0.0.1:5500/evaluation.html");
-					console.log("Rating of" + capturedRating + "will be submitted now")
+
+
+					/* window.location.replace("http://127.0.0.1:5500/evaluation.html"); */
+					/* console.log("Rating of " + capturedRating +
+						" will be submitted now") */
+
+					console.log("hier jetzt der scheiß hier alter " + capturedRating)
+					postRating()
+
+
 				} else {
 					document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
 				}
