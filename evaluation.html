@@ -8,20 +8,28 @@
 	<title>Document</title>
 </head>
 
-<body>
-
-	<h1>Thanks for rating us</h1>
-
-	<button type="button" onclick="changeBack()">Back to Home</button>
 
 
-	<script>
-		function changeBack() {
-			window.location.replace("http://127.0.0.1:5500/")
-		}
-	</script>
+<div class="wrapper">
+	<header class="eval-header">
+		<div class="summary-box">
+			<p class="eval-totalcount">67</p>
+			<p class="eval-message">NPS</p>
+		</div>
+	</header>
+
+	<body>
+
+		<h1>Thanks for rating us</h1>
+
+		<button type="button" onclick="changeBack()">Back to Home</button>
+
+		<button onClick="getEvaluation()">SHOW ME THE MONEY</button>
 
 
-</body>
+		<script src="main.js"></script>
+		<script src="getEval.js"></script>
+
+	</body>
 
 </html>

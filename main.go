@@ -114,6 +114,21 @@ func get(w http.ResponseWriter, r *http.Request) {
 	w.Write(user)
 }
 
+func getEval(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	users, err := json.Marshal(getUsers())
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(users)
+
+	w.Write(users)
+}
+
 func post(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "OPTIONS" {
 		enableCors(&w)
@@ -194,10 +209,11 @@ func notFound(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	getUsers()
+	/* getUsers() */
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", get).Methods(http.MethodGet)
+	r.HandleFunc("/eval", getEval).Methods(http.MethodGet)
 	r.HandleFunc("/", post).Methods(http.MethodPost)
 	r.HandleFunc("/", put).Methods(http.MethodPut)
 	r.HandleFunc("/", delete).Methods(http.MethodDelete)
