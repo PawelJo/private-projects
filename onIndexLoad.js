@@ -13,3 +13,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 	window.userID = randomUser.id
 	/* console.log(window.userID) */
 })
+

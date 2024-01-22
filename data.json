@@ -2,17 +2,17 @@
     {
         "id": 1,
         "name": "Bobby Draper",
-        "rating": 0
+        "rating": 2
     },
     {
         "id": 2,
         "name": "Camina Drummer",
-        "rating": 9
+        "rating": 10
     },
     {
         "id": 3,
         "name": "Ali Bumaye",
-        "rating": 4
+        "rating": 8
     },
     {
         "id": 4,
@@ -22,12 +22,12 @@
     {
         "id": 5,
         "name": "Petty Schroeder",
-        "rating": 3
+        "rating": 10
     },
     {
         "id": 6,
         "name": "Thompson Walsh",
-        "rating": 0
+        "rating": 8
     },
     {
         "id": 7,
@@ -42,27 +42,27 @@
     {
         "id": 9,
         "name": "Hannah Hubbard",
-        "rating": 6
+        "rating": 8
     },
     {
         "id": 10,
         "name": "Best Norris",
-        "rating": 0
+        "rating": 10
     },
     {
         "id": 11,
         "name": "Camacho Fernandez",
-        "rating": 7
+        "rating": 8
     },
     {
         "id": 12,
         "name": "Vang Frank",
-        "rating": 9
+        "rating": 3
     },
     {
         "id": 13,
         "name": "Lea Ramsey",
-        "rating": 8
+        "rating": 2
     },
     {
         "id": 14,
@@ -72,22 +72,22 @@
     {
         "id": 15,
         "name": "Ladonna Pickett",
-        "rating": 1
+        "rating": 8
     },
     {
         "id": 16,
         "name": "Virginia Hendricks",
-        "rating": 9
+        "rating": 10
     },
     {
         "id": 17,
         "name": "Luisa Raymond",
-        "rating": 10
+        "rating": 8
     },
     {
         "id": 18,
         "name": "Candice Edwards",
-        "rating": 5
+        "rating": 9
     },
     {
         "id": 19,
@@ -97,37 +97,37 @@
     {
         "id": 20,
         "name": "Patrica Saunders",
-        "rating": 0
+        "rating": 9
     },
     {
         "id": 21,
         "name": "Sharron Green",
-        "rating": 7
+        "rating": 10
     },
     {
         "id": 22,
         "name": "Shelby Nguyen",
-        "rating": 9
+        "rating": 6
     },
     {
         "id": 23,
         "name": "Raymond Wood",
-        "rating": 5
+        "rating": 8
     },
     {
         "id": 24,
         "name": "Stafford Fisher",
-        "rating": 9
+        "rating": 2
     },
     {
         "id": 25,
         "name": "Marcia Boyd",
-        "rating": 9
+        "rating": 7
     },
     {
         "id": 26,
         "name": "Avis Keith",
-        "rating": 10
+        "rating": 5
     },
     {
         "id": 27,
@@ -137,7 +137,7 @@
     {
         "id": 28,
         "name": "Pate Montoya",
-        "rating": 8
+        "rating": 7
     },
     {
         "id": 29,
@@ -147,6 +147,6 @@
     {
         "id": 30,
         "name": "Jaime Ratliff",
-        "rating": 6
+        "rating": 8
     }
 ]

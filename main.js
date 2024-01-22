@@ -26,6 +26,10 @@ function getData() {
 } */
 
 
+const oldBody = document.querySelector("body")
+console.log("Oldbody :")
+console.log(oldBody)
+
 var userID = null
 let randomUser = "";
 /* let rating = null; */
@@ -48,6 +52,7 @@ async function getRandomUser() {
 console.log(userID)
 
 function postRating() {
+
 	fetch('http://localhost:8080', {
 		method: 'POST',
 		mode: 'cors',
@@ -64,26 +69,23 @@ function postRating() {
 		.then(res => res.json())
 		.then(data => console.log(data))
 		.catch(err => console.log(err))
-	console.log("Fire awayy")
-	console.log(userID)
-	console.log(randomUser.name)
-	console.log(capturedRating)
+	/* 	console.log("Fire awayy")
+		console.log(userID)
+		console.log(randomUser.name)
+		console.log(capturedRating) */
+
 }
 
-function numberChosen() {
 
-	capturedRating =
 
-		document.querySelector('input[name="rating"]:checked').value;
-
-	/* console.log(capturedRating) */
+function changeHTML() {
 
 	const oldText = document.querySelector(".survey-content");
 	/* console.log(oldText) */
 	const newText = document.createElement("div")
 
 	newText.innerHTML =
-		'<p class="survey-text">Danke für Ihre Bewertung. Teilen Sie uns gerne mit, was noch verbessert werden muss.</p>'
+		'<p class="survey-text id="first-stage">Danke für Ihre Bewertung. Teilen Sie uns gerne mit, was noch verbessert werden muss.</p>'
 
 	const counter = document.createElement('div');
 	counter.innerHTML = '<div id="countdown"></div>'
@@ -102,14 +104,22 @@ function numberChosen() {
 
 	let timeleft = 3;
 	const downloadTimer = setInterval(function () {
+
 		if (timeleft <= 0) {
 			clearInterval(downloadTimer);
 
 
-			window.location.replace("http://127.0.0.1:5500/evaluation.html");
+			/* window.location.replace("http://127.0.0.1:5500/evaluation.html"); */
 
 
-			console.log("hier jetzt der scheiß hier alter " + capturedRating)
+			const toBeRemoved = document.querySelector("#first-stage")
+			const toBeRemoved2 = document.querySelector("#second-stage")
+			console.log("Elements to be removed: ")
+			console.log(toBeRemoved)
+			/* toBeRemoved.innerHTML = '' */
+			toBeRemoved.remove()
+			toBeRemoved2.remove()
+
 			postRating()
 
 
@@ -118,6 +128,36 @@ function numberChosen() {
 		}
 		timeleft -= 1;
 	}, 1000);
+}
+
+function changeBackHTML() {
+
+
+	console.log("oldbody  second try :")
+	console.log(oldBody)
+
+
+
+
+
+	document.body.innerHTML = oldBody;
+
+	/* console.log(Body) */
+}
+
+function numberChosen() {
+
+
+	capturedRating =
+
+		document.querySelector('input[name="rating"]:checked').value;
+
+	/* console.log(capturedRating) */
+
+
+	changeHTML()
+
+
 
 }
 
