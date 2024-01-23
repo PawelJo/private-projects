@@ -20,15 +20,15 @@ const getEvaluation = async () => {
 getEvaluation()
 
 
+allData = []
+detractors = []
+indifferents = []
+promoters = []
 
 
 async function main() {
 	try {
 		const data = await getEvaluation();
-		allData = []
-		detractors = []
-		indifferents = []
-		promoters = []
 
 
 		rating1 = []
@@ -45,19 +45,22 @@ async function main() {
 
 		/* console.log(data) */
 		const newData = data.map((dataPoint) => {
-			allData.push(dataPoint)
+
 			if (dataPoint.rating == 0) {
 				console.log("Hack someone else")
 				return
 			}
 			if (dataPoint.rating < 7) {
 				detractors.push(dataPoint.rating)
+				allData.push(dataPoint)
 			}
 			else if (dataPoint.rating == 7 || dataPoint.rating == 8) {
 				indifferents.push(dataPoint.rating)
+				allData.push(dataPoint)
 			}
 			else if (dataPoint.rating > 8) {
 				promoters.push(dataPoint.rating)
+				allData.push(dataPoint)
 			}
 
 			else {
@@ -125,6 +128,10 @@ async function main() {
 	document.getElementById("vote-count").textContent = allData.length;
 
 
+
+
+
+
 	document.getElementById("rating-1").textContent = rating1.length
 	document.getElementById("rating-2").textContent = rating2.length
 	document.getElementById("rating-3").textContent = rating3.length
@@ -136,18 +143,7 @@ async function main() {
 	document.getElementById("rating-9").textContent = rating9.length
 	document.getElementById("rating-10").textContent = rating10.length
 
-
-	console.log("rating1 length :" + rating1.length)
-	console.log("rating2 length :" + rating2.length)
-	console.log("rating3 length :" + rating3.length)
-	console.log("rating4 length :" + rating4.length)
-	console.log("rating5 length :" + rating5.length)
-	console.log("rating6 length :" + rating6.length)
-	console.log("rating7 length :" + rating7.length)
-	console.log("rating8 length :" + rating8.length)
-	console.log("rating9 length :" + rating9.length)
-	console.log("rating10 length :" + rating10.length)
-
+	displayUserData()
 
 }
 
@@ -173,3 +169,25 @@ document.addEventListener("DOMContentLoaded", main())
 console.log(indifferents)
 console.log(promoters)
 console.log(allData) */
+
+
+function displayUserData() {
+	const jsonData = allData;
+	console.log("jsonData var: " + jsonData.length)
+	console.log(jsonData.length)
+	const userListBody = document.getElementById('userListBody');
+
+	userListBody.innerHTML = '';
+
+	// Loop through the JSON data and create table rows
+	jsonData.forEach(user => {
+		const row = document.createElement('tr');
+		row.innerHTML = `
+			<td>${user.name}</td>
+			<td>${user.company}</td>
+			<td>${user.industry}</td>
+			<td>${user.rating}</td>
+		`;
+		userListBody.appendChild(row);
+	});
+}

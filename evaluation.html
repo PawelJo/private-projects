@@ -13,67 +13,101 @@
 <div class="wrapper">
 	<header class="eval-header" id="eval-header">
 		<div class="summary-box">
-			<p class="eval-totalcount" id="eval-totalcount">67</p>
+			<p class="eval-totalcount" id="eval-totalcount">NaN</p>
 			<p class="eval-message">NPS</p>
 		</div>
 
 		<div class="vote-distribution">
-			<table>
-				<tr class="amountOfVotes">
-					<th id="rating-1">1</th>
-					<th id="rating-2">2</th>
-					<th id="rating-3">3</th>
-					<th id="rating-4">4</th>
-					<th id="rating-5">5</th>
-					<th id="rating-6">6</th>
-					<th id="rating-7">7</th>
-					<th id="rating-8">8</th>
-					<th id="rating-9">9</th>
-					<th id="rating-10">10</th>
-				</tr>
-				<tr>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
-					<th>Users</th>
+			<table class="amountOfVotes">
+				<tr class="tr-rating">
+					<th class="th-rating">
+						<p id="rating-1" class="p-rating">1</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-2" class="p-rating">2</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-3" class="p-rating">3</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-4" class="p-rating">4</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-5" class="p-rating">5</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-6" class="p-rating">6</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-7" class="p-rating">7</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-8" class="p-rating">8</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-9" class="p-rating">9</p><br>
+						<p class="p-users">Users</p>
+					</th>
+					<th class="th-rating">
+						<p id="rating-10" class="p-rating">10</p><br>
+						<p class="p-users">Users</p>
+					</th>
+
 				</tr>
 				<tr class="ratingForAmount">
-					<th>1</th>
-					<th>2</th>
-					<th>3</th>
-					<th>4</th>
-					<th>5</th>
-					<th>6</th>
-					<th>7</th>
-					<th>8</th>
-					<th>9</th>
-					<th>10</th>
+					<th class="th-ratingForAmount">1</th>
+					<th class="th-ratingForAmount">2</th>
+					<th class="th-ratingForAmount">3</th>
+					<th class="th-ratingForAmount">4</th>
+					<th class="th-ratingForAmount">5</th>
+					<th class="th-ratingForAmount">6</th>
+					<th class="th-ratingForAmount">7</th>
+					<th class="th-ratingForAmount">8</th>
+					<th class="th-ratingForAmount">9</th>
+					<th class="th-ratingForAmount">10</th>
 				</tr>
 			</table>
+			<div class="numberVoted">
+				<p class="vote-count" id="vote-count">0</p><br>
+				<p class="eval-message">Users</p>
+
+				<!-- <p class="eval-message">Voted</p> -->
+			</div>
 		</div>
 
 
-		<div class="numberVoted">
-			<p class="vote-count" id="vote-count">0</p>
-			<p class="eval-message">Users Voted</p>
-		</div>
 	</header>
 
 	<body>
 
-		<h1>Thanks for rating us</h1>
 
-		<button type="button" onclick="changeBack()">Back to Home</button>
 
-		<button onClick="getEvaluation()">SHOW ME THE MONEY</button>
 
-		<script src="tableMaker.js"></script>
+		<table id="userList">
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Account</th>
+					<th>Industry</th>
+					<th>Score</th>
+				</tr>
+			</thead>
+			<tbody id="userListBody">
+			</tbody>
+		</table>
+
+
+
+
+
 		<script src="main.js"></script>
 		<script src="getEval.js"></script>
 

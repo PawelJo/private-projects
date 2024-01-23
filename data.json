@@ -3,22 +3,22 @@
         "id": 1,
         "name": "Bobby Draper",
         "rating": 5,
-        "company": "Wheels on the Go",
-        "industry": "Car Rentals"
+        "company": "Martian Congressional Republic Navy",
+        "industry": "Planetary Defense"
     },
     {
         "id": 2,
         "name": "Camina Drummer",
         "rating": 10,
-        "company": "Cycle City Rentals",
-        "industry": "Bike Rentals"
+        "company": "Outer Planets Alliance",
+        "industry": "Human Rights Activism"
     },
     {
         "id": 3,
-        "name": "Ali Bumaye",
-        "rating": 0,
-        "company": "Boat Breeze Rentals",
-        "industry": "Boat Rentals"
+        "name": "Naomi Nagata",
+        "rating": 8,
+        "company": "Transport Union",
+        "industry": "Ring Space Management"
     },
     {
         "id": 4,
@@ -79,7 +79,7 @@
     {
         "id": 12,
         "name": "Vang Frank",
-        "rating": 4,
+        "rating": 3,
         "company": "Alpine Adventure Rentals",
         "industry": "Winter Sports Equipment Rentals"
     },
@@ -114,7 +114,7 @@
     {
         "id": 17,
         "name": "Luisa Raymond",
-        "rating": 8,
+        "rating": 3,
         "company": "Bay Breeze Bikes",
         "industry": "Bike Rentals"
     },
@@ -149,7 +149,7 @@
     {
         "id": 22,
         "name": "Shelby Nguyen",
-        "rating": 6,
+        "rating": 3,
         "company": "CityCruiser Bikes",
         "industry": "Bike Rentals"
     },
@@ -226,7 +226,7 @@
     {
         "id": 33,
         "name": "Valerie Sherman",
-        "rating": 9,
+        "rating": 10,
         "company": "Coastal Cruises",
         "industry": "Boat Rentals"
     },
@@ -310,7 +310,7 @@
     {
         "id": 45,
         "name": "Barbara Farley",
-        "rating": 8,
+        "rating": 6,
         "company": "CitySprint Scooters",
         "industry": "Scooter Rentals"
     },
@@ -366,14 +366,14 @@
     {
         "id": 53,
         "name": "Edmund Carey",
-        "rating": 8,
+        "rating": 3,
         "company": "CityZip Scooters",
         "industry": "Scooter Rentals"
     },
     {
         "id": 54,
         "name": "Larissa Kirk",
-        "rating": 9,
+        "rating": 3,
         "company": "Blue Horizon Boat Rentals",
         "industry": "Boat Rentals"
     },

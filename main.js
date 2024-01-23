@@ -67,7 +67,7 @@ function changeHTML() {
 		/* 				'`<p class="survey-text">`Du hast uns mit ${capturedRating} bewertet.+ <a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a></p>`' */
 
 
-		'<p class="survey-text">Du hast uns mit ' + capturedRating + ' bewertet. <a onClick="killTimer(); changeBackHTML()">Zurück und neubewerten.</a></p>'
+		'<p class="survey-text">Du hast uns mit ' + capturedRating + ' bewertet.</p><button class="link-button" onClick="killTimer(); changeBackHTML()">Zurück und neubewerten.</button>'
 
 	oldText.replaceWith(newText, ratingSelectedText, counter)
 
@@ -121,14 +121,20 @@ function changeBackHTML() {
 	</div>
 
 
-/* 	Helper Buttons for navigation and function testing
-
-	<button onclick="numberChosen()"> REPLACE HTML now </button>
-	<button onclick="goToCountDown()"> Go to counter </button>
-	<button onClick="postRating()">Send it Homie</button>
-	<button onClick="getEvaluation()">SHOW ME THE MONEY</button>
-	<button onClick="changeBackHTML()">Trigger new body</button> */
-
+	<div class="exampleGrid">
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxLong"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxLong"></div>
+	<div class="exampleBoxLong"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxSquare"></div>
+	<div class="exampleBoxSquare"></div>
+</div>
 
 
 </div>
@@ -184,7 +190,7 @@ function changeBack() {
 let downloadTimer;
 
 function timerManagement() {
-	let timeleft = 3;
+	let timeleft = 10000;
 	downloadTimer = setInterval(function () {
 
 		if (timeleft <= 0) {
@@ -206,8 +212,8 @@ function timerManagement() {
 
 
 		} else {
-			console.log("Time left: " + timeleft)
-			document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+
+			document.getElementById("countdown").innerHTML = timeleft;
 		}
 		timeleft -= 1;
 	}, 1000);
