@@ -1,35 +1,4 @@
 
-
-
-
-/* 		function captureRating() {
-			const capturedRating = document.querySelector('input[name="rating"]:checked').value;
-			return capturedRating
-	
-		} */
-
-/* Little helper function for testing */
-/* 		function goToCountDown() {
-			e.preventDefault();
-			window.location.replace(" http://127.0.0.1:5500/countdown.html");
-		} */
-
-
-/* let customerData;
-function getData() {
-	fetch('./data.json').then(response => response.json())
-		.then(data => {
-			customerData = data;
-		}).then(() => {
-			console.log(customerData)
-		});
-} */
-
-
-const oldBody = document.querySelector("body")
-console.log("Oldbody :")
-console.log(oldBody)
-
 var userID = null
 let randomUser = "";
 /* let rating = null; */
@@ -59,7 +28,9 @@ function postRating() {
 		body: JSON.stringify({
 			id: userID,
 			name: randomUser.name,
-			rating: parseInt(capturedRating)
+			rating: parseInt(capturedRating),
+			company: randomUser.company,
+			industry: randomUser.industry
 		}),
 		headers: {
 			"Content-type": "application/json"
@@ -68,11 +39,11 @@ function postRating() {
 	})
 		.then(res => res.json())
 		.then(data => console.log(data))
-		.catch(err => console.log(err))
+		.catch(err => console.log("Lak wer bist du " + err))
 	/* 	console.log("Fire awayy")
-		console.log(userID)
-		console.log(randomUser.name)
-		console.log(capturedRating) */
+	console.log(userID)
+	console.log(randomUser.name)
+	console.log(capturedRating) */
 
 }
 
@@ -96,51 +67,88 @@ function changeHTML() {
 		/* 				'`<p class="survey-text">`Du hast uns mit ${capturedRating} bewertet.+ <a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a></p>`' */
 
 
-		'<p class="survey-text">Du hast uns mit ' + capturedRating + ' bewertet. <a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a></p>'
+		'<p class="survey-text">Du hast uns mit ' + capturedRating + ' bewertet. <a onClick="killTimer(); changeBackHTML()">Zurück und neubewerten.</a></p>'
 
 	oldText.replaceWith(newText, ratingSelectedText, counter)
 
 	console.log(`Du hast uns mit ${capturedRating} bewertet.`)
+	timerManagement();
 
-	let timeleft = 3;
-	const downloadTimer = setInterval(function () {
-
-		if (timeleft <= 0) {
-			clearInterval(downloadTimer);
+}
 
 
-			/* window.location.replace("http://127.0.0.1:5500/evaluation.html"); */
-
-
-			const toBeRemoved = document.querySelector("#first-stage")
-			const toBeRemoved2 = document.querySelector("#second-stage")
-			console.log("Elements to be removed: ")
-			console.log(toBeRemoved)
-			/* toBeRemoved.innerHTML = '' */
-			toBeRemoved.remove()
-			toBeRemoved2.remove()
-
-			postRating()
-
-
-		} else {
-			document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-		}
-		timeleft -= 1;
-	}, 1000);
+function killTimer() {
+	clearInterval(downloadTimer)
 }
 
 function changeBackHTML() {
+	const oldBody = `	<div class="wrapper">
+	<header class="header">
+		<p class="welcome-message" id="first-stage">Hi ${randomUser.name}! Willkommen zurück zu RantWhere.</p>
+	</header>
+	<div class="survey-box" id="second-stage">
+		<div class="survey-content">
+			<p class="survey-text">Wie wahrscheinlich (1-10) ist es, dass Sie uns weiterempfehlen werden?</p>
+
+			<div class="ratings">
+				<p class="survey-text">Gering</p>
+
+				<form class="radio-form">
+					<input type="radio" id="1" name="rating" value="1" onclick="numberChosen()">
+					<label for="1">1</label>
+					<input type="radio" id="2" name="rating" value="2" onclick="numberChosen()">
+					<label for="2">2</label>
+					<input type="radio" id="3" name="rating" value="3" onclick="numberChosen()">
+					<label for="3">3</label>
+					<input type="radio" id="4" name="rating" value="4" onclick="numberChosen()">
+					<label for="4">4</label>
+					<input type="radio" id="5" name="rating" value="5" onclick="numberChosen()">
+					<label for="5">5</label>
+					<input type="radio" id="6" name="rating" value="6" onclick="numberChosen()">
+					<label for="6">6</label>
+					<input type="radio" id="7" name="rating" value="7" onclick="numberChosen()">
+					<label for="7">7</label>
+					<input type="radio" id="8" name="rating" value="8" onclick="numberChosen()">
+					<label for="8">8</label>
+					<input type="radio" id="9" name="rating" value="9" onclick="numberChosen()">
+					<label for="9">9</label>
+					<input type="radio" id="10" name="rating" value="10" onclick="numberChosen()">
+					<label for="10">10</label>
+				</form>
+				<p class="survey-text">hoch</p>
+			</div>
+		</div>
+	</div>
 
 
-	console.log("oldbody  second try :")
-	console.log(oldBody)
+/* 	Helper Buttons for navigation and function testing
+
+	<button onclick="numberChosen()"> REPLACE HTML now </button>
+	<button onclick="goToCountDown()"> Go to counter </button>
+	<button onClick="postRating()">Send it Homie</button>
+	<button onClick="getEvaluation()">SHOW ME THE MONEY</button>
+	<button onClick="changeBackHTML()">Trigger new body</button> */
 
 
 
+</div>
 
+<script src="main.js"></script>
+`
 
-	document.body.innerHTML = oldBody;
+	const oldHTML = document.querySelector("body")
+	const oldHTML2 = document.querySelector(".survey-box")
+
+	console.log(oldHTML2)
+
+	oldHTML.innerHTML = ''
+
+	console.log("new body triggered")
+
+	const newBody = document.createElement('div')
+	newBody.innerHTML = oldBody
+	document.body.append(newBody)
+
 
 	/* console.log(Body) */
 }
@@ -168,5 +176,40 @@ function numberChosen() {
 // Helper Function for navigation
 
 function changeBack() {
-	window.location.replace("http://127.0.0.1:5500/")
+
+
+	changeBackHTML();
+}
+
+let downloadTimer;
+
+function timerManagement() {
+	let timeleft = 3;
+	downloadTimer = setInterval(function () {
+
+		if (timeleft <= 0) {
+			clearInterval(downloadTimer);
+
+
+			/* window.location.replace("http://127.0.0.1:5500/evaluation.html"); */
+
+
+			const toBeRemoved = document.querySelector("#first-stage")
+			const toBeRemoved2 = document.querySelector("#second-stage")
+			console.log("Elements to be removed: ")
+			console.log(toBeRemoved)
+			toBeRemoved.remove()
+			toBeRemoved2.remove()
+
+			postRating()
+
+
+
+		} else {
+			console.log("Time left: " + timeleft)
+			document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+		}
+		timeleft -= 1;
+	}, 1000);
+
 }

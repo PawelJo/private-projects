@@ -11,10 +11,57 @@
 
 
 <div class="wrapper">
-	<header class="eval-header">
+	<header class="eval-header" id="eval-header">
 		<div class="summary-box">
 			<p class="eval-totalcount" id="eval-totalcount">67</p>
 			<p class="eval-message">NPS</p>
+		</div>
+
+		<div class="vote-distribution">
+			<table>
+				<tr class="amountOfVotes">
+					<th id="rating-1">1</th>
+					<th id="rating-2">2</th>
+					<th id="rating-3">3</th>
+					<th id="rating-4">4</th>
+					<th id="rating-5">5</th>
+					<th id="rating-6">6</th>
+					<th id="rating-7">7</th>
+					<th id="rating-8">8</th>
+					<th id="rating-9">9</th>
+					<th id="rating-10">10</th>
+				</tr>
+				<tr>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+					<th>Users</th>
+				</tr>
+				<tr class="ratingForAmount">
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+					<th>7</th>
+					<th>8</th>
+					<th>9</th>
+					<th>10</th>
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="numberVoted">
+			<p class="vote-count" id="vote-count">0</p>
+			<p class="eval-message">Users Voted</p>
 		</div>
 	</header>
 
@@ -26,7 +73,7 @@
 
 		<button onClick="getEvaluation()">SHOW ME THE MONEY</button>
 
-
+		<script src="tableMaker.js"></script>
 		<script src="main.js"></script>
 		<script src="getEval.js"></script>
 

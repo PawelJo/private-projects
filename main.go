@@ -13,9 +13,11 @@ import (
 )
 
 type User struct {
-	Id     int    `json:"id"`
-	Name   string `json:"name"`
-	Rating int    `json:"rating"`
+	Id       int    `json:"id"`
+	Name     string `json:"name"`
+	Rating   int    `json:"rating"`
+	Company  string `json:"company"`
+	Industry string `json:"industry"`
 }
 
 // Test function, DELETE LATER
