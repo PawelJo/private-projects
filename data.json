@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Bobby Draper",
-        "rating": 5,
+        "rating": 6,
         "company": "Martian Congressional Republic Navy",
         "industry": "Planetary Defense"
     },
@@ -58,7 +58,7 @@
     {
         "id": 9,
         "name": "Hannah Hubbard",
-        "rating": 3,
+        "rating": 7,
         "company": "Urban Trek Bikes",
         "industry": "Bike Rentals"
     },
@@ -170,7 +170,7 @@
     {
         "id": 25,
         "name": "Marcia Boyd",
-        "rating": 3,
+        "rating": 5,
         "company": "Urban Drifters",
         "industry": "Scooter Rentals"
     },
@@ -191,7 +191,7 @@
     {
         "id": 28,
         "name": "Pate Montoya",
-        "rating": 10,
+        "rating": 7,
         "company": "Metropolitan Luxury",
         "industry": "Luxury Car Rentals"
     },
@@ -226,7 +226,7 @@
     {
         "id": 33,
         "name": "Valerie Sherman",
-        "rating": 10,
+        "rating": 3,
         "company": "Coastal Cruises",
         "industry": "Boat Rentals"
     },
@@ -240,7 +240,7 @@
     {
         "id": 35,
         "name": "Kiera Hodge",
-        "rating": 10,
+        "rating": 4,
         "company": "MetroBike Rentals",
         "industry": "Bike Rentals"
     },
@@ -261,7 +261,7 @@
     {
         "id": 38,
         "name": "Angelo Byers",
-        "rating": 4,
+        "rating": 5,
         "company": "CityScoot Adventures",
         "industry": "Scooter Rentals"
     },
@@ -317,7 +317,7 @@
     {
         "id": 46,
         "name": "Sheldon Mcintosh",
-        "rating": 6,
+        "rating": 5,
         "company": "Snowy Tracks Rentals",
         "industry": "Winter Sports Equipment Rentals"
     },
@@ -387,7 +387,7 @@
     {
         "id": 56,
         "name": "Mona Short",
-        "rating": 8,
+        "rating": 10,
         "company": "EcoTrail Bikes",
         "industry": "Bike Rentals"
     },

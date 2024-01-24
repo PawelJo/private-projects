@@ -20,21 +20,6 @@ type User struct {
 	Industry string `json:"industry"`
 }
 
-// Test function, DELETE LATER
-/* func writeUser() {
-	data := User{
-		Id:     6,
-		Name:   "Hurensohn",
-		Rating: 4,
-	}
-
-	file, _ := json.MarshalIndent(data, "", "")
-
-	_ = ioutil.WriteFile("test.json", file, 0644)
-} */
-
-// Get User for Get Request and to initialize User to receive rating from
-
 func getUsers() (users []User) {
 
 	fileBytes, err := ioutil.ReadFile("data.json")
@@ -210,8 +195,6 @@ func notFound(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
-	/* getUsers() */
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", get).Methods(http.MethodGet)

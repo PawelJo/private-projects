@@ -384,8 +384,10 @@ button {
 .countdown {
 	display: flex;
 	margin-top: 5px;
-	font-size: 14px;
+	font-size: 28px;
 	margin-left: none;
 	align-items: center;
+	font-weight: bold;
 	justify-content: flex-end;
+	text-decoration: underline;
 }

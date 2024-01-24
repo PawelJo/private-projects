@@ -14,8 +14,6 @@ async function getRandomUser() {
 	return user
 }
 
-
-
 function postRating() {
 
 	fetch('http://localhost:8080', {
@@ -34,16 +32,12 @@ function postRating() {
 
 	})
 		.then(res => res.json())
-		.then(data => console.log(data))
 		.catch(err => console.log("Lak wer bist du " + err))
 }
-
-
 
 function changeHTML() {
 
 	const oldText = document.querySelector(".survey-content");
-	/* console.log(oldText) */
 	const newText = document.createElement("div")
 	newText.className = 'survey-content';
 
@@ -129,18 +123,12 @@ function changeBackHTML() {
 `
 
 	const oldHTML = document.querySelector("body")
-	const oldHTML2 = document.querySelector(".survey-box")
-
-	console.log(oldHTML2)
 
 	oldHTML.innerHTML = ''
-
-	console.log("new body triggered")
 
 	const newBody = document.createElement('div')
 	newBody.innerHTML = oldBody
 	document.body.append(newBody)
-
 
 
 }
@@ -158,8 +146,6 @@ function numberChosen() {
 
 }
 
-
-
 function changeBack() {
 
 
@@ -169,28 +155,20 @@ function changeBack() {
 let countdownTimer;
 
 function timerManagement() {
-	let timeleft = 3;
+	let timeleft = 15;
 	countdownTimer = setInterval(function () {
 
 		if (timeleft <= 0) {
 			clearInterval(countdownTimer);
 
-
-
-
 			const toBeRemoved = document.querySelector("#first-stage")
 			const toBeRemoved2 = document.querySelector("#second-stage")
-			console.log("Elements to be removed: ")
-			console.log(toBeRemoved)
+
 			toBeRemoved.remove()
 			toBeRemoved2.remove()
 
 			postRating()
-
-
-
 		} else {
-
 			document.getElementById("countdown").innerHTML = timeleft;
 		}
 		timeleft -= 1;

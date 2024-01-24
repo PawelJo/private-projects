@@ -1,7 +1,3 @@
-
-
-
-/* async function getEvaluation()  */
 const getEvaluation = async () => {
 	const response = await
 		fetch('http://localhost:8080/eval', {
@@ -9,16 +5,10 @@ const getEvaluation = async () => {
 			mode: 'cors'
 		});
 	const data = await response.json();
-	/* console.log(data) */
 	return data
 }
 
-
-
-
-
 getEvaluation()
-
 
 allData = []
 detractors = []
@@ -29,8 +19,6 @@ promoters = []
 async function main() {
 	try {
 		const data = await getEvaluation();
-
-
 		rating1 = []
 		rating2 = []
 		rating3 = []
@@ -42,8 +30,6 @@ async function main() {
 		rating9 = []
 		rating10 = []
 
-
-		/* console.log(data) */
 		const newData = data.map((dataPoint) => {
 
 			if (dataPoint.rating == 0) {
@@ -103,34 +89,18 @@ async function main() {
 			}
 		})
 
-		console.log("last line, detractors: " + detractors.length)
-		console.log("alldata Length: " + allData.length)
-		console.log("rating10 lenght: " + rating10.length)
 	}
 	catch (error) {
 		console.log("I HATE ASYNC I HATE ASYNC")
 	}
-
 	const percentageDetractors = getPercentage(indifferents, promoters)
-	console.log("Percentage Detractors: " + percentageDetractors)
-
 	const percentageIndifferents = getPercentage(detractors, promoters)
-	console.log("Percentage Indifferents" + percentageIndifferents)
-
 	const percentagePromoters = getPercentage(detractors, indifferents)
-	console.log("Percentage Promoters" + percentagePromoters)
 
 	const netPromoterScore = Math.floor(percentagePromoters - percentageDetractors)
-	console.log(netPromoterScore)
 
-	/* const npsScore = document.getElementById() */
 	document.getElementById("eval-totalcount").textContent = netPromoterScore;
 	document.getElementById("rating-numVotes").textContent = allData.length;
-
-
-
-
-
 
 	document.getElementById("rating-1").textContent = rating1.length
 	document.getElementById("rating-2").textContent = rating2.length
@@ -144,7 +114,6 @@ async function main() {
 	document.getElementById("rating-10").textContent = rating10.length
 
 	displayUserData()
-
 }
 
 
@@ -153,11 +122,8 @@ async function main() {
 
 let getPercentage = (Other1, Other2) => {
 	const otherVotes = Other1.length + Other2.length
-	/* console.log("Other1 Length : " + Other1.length) */
 	const targetVotes = allData.length - otherVotes
-	/* console.log("target votes : " + targetVotes) */
 	const percentage = targetVotes / allData.length * 100
-	/* console.log("Percentage from getPercentage :" + percentage) */
 	return percentage
 }
 
@@ -165,16 +131,9 @@ let getPercentage = (Other1, Other2) => {
 
 document.addEventListener("DOMContentLoaded", main())
 
-/* console.log(detractors)
-console.log(indifferents)
-console.log(promoters)
-console.log(allData) */
-
 
 function displayUserData() {
 	const jsonData = allData;
-	console.log("jsonData var: " + jsonData.length)
-	console.log(jsonData.length)
 	const userListBody = document.getElementById('userListBody');
 
 	userListBody.innerHTML = '';
