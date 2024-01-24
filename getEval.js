@@ -125,7 +125,7 @@ async function main() {
 
 	/* const npsScore = document.getElementById() */
 	document.getElementById("eval-totalcount").textContent = netPromoterScore;
-	document.getElementById("vote-count").textContent = allData.length;
+	document.getElementById("rating-numVotes").textContent = allData.length;
 
 
 

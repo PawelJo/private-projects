@@ -79,7 +79,7 @@
     {
         "id": 12,
         "name": "Vang Frank",
-        "rating": 3,
+        "rating": 4,
         "company": "Alpine Adventure Rentals",
         "industry": "Winter Sports Equipment Rentals"
     },
@@ -373,7 +373,7 @@
     {
         "id": 54,
         "name": "Larissa Kirk",
-        "rating": 3,
+        "rating": 10,
         "company": "Blue Horizon Boat Rentals",
         "industry": "Boat Rentals"
     },

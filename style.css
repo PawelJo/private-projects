@@ -93,6 +93,7 @@ h6 {
 
 .eval-header {
 	display: flex;
+	justify-content: space-between;
 	position: relative;
 	background: #D9D9D9;
 
@@ -120,13 +121,15 @@ h6 {
 }
 
 .welcome-message {
+	display: flex;
 	position: relative;
 	padding-left: 37px;
 	padding-top: 16px;
 	padding-bottom: 32px;
 	font-weight: 400;
-
 }
+
+
 
 .summary-box {
 	margin: 0;
@@ -227,8 +230,22 @@ input[type="radio"]:checked+label {
 }
 
 .survey-text {
+	display: flex;
+
+	font-size: 14px;
+	width: 100%;
+	text-align: start;
+	align-items: center;
+}
+
+.survey-text-rating {
+	display: flex;
 	margin-top: 5px;
 	font-size: 14px;
+	width: 40%;
+	text-align: end;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 @media all and (min-width: 600px) {
@@ -292,6 +309,7 @@ button {
 	font-family: inherit;
 	border: 0;
 	padding: 0;
+	margin: auto;
 	background: none;
 	color: #000;
 	display: flex;
@@ -299,6 +317,10 @@ button {
 	text-align: left;
 	justify-content: space-between;
 	font-size: 14px;
+	justify-self: center;
+	align-items: center;
+	margin-left: 5px;
+	width: 30%;
 }
 
 
@@ -359,129 +381,11 @@ button {
 	text-align: center;
 }
 
-
-
-/* Countdown Spinner, shamelessly stolen from some Dude on Codepen, because of a lack of time */
-/* 
-@keyframes timer-slide-lt {
-	0% {
-		transform: rotate(135deg);
-	}
-
-	50% {
-		transform: rotate(135deg);
-	}
-
-	100% {
-		transform: rotate(315deg);
-	}
+.countdown {
+	display: flex;
+	margin-top: 5px;
+	font-size: 14px;
+	margin-left: none;
+	align-items: center;
+	justify-content: flex-end;
 }
-
-@keyframes timer-slide-rt {
-	0% {
-		transform: rotate(-45deg);
-	}
-
-	50% {
-		transform: rotate(135deg);
-	}
-
-	100% {
-		transform: rotate(135deg);
-	}
-}
-
-.timer {
-	width: 100%;
-	height: 100%;
-	position: fixed;
-
-	.circle-timer {
-		width: 200px;
-		height: 200px;
-		margin: 2rem auto;
-		position: relative;
-		cursor: pointer;
-
-		.timer-slot {
-			position: relative;
-			width: 100px;
-			height: 200px;
-			display: inline-block;
-			overflow: hidden;
-			float: left;
-
-			.timer-lt,
-			.timer-rt {
-				border-radius: 50%;
-				position: relative;
-				top: 50%;
-				left: 0;
-				z-index: 15;
-				border: 10px solid rgb(0, 0, 0);
-				width: 180px;
-				height: 180px;
-				margin-left: -100px;
-				margin-top: -100px;
-				border-left-color: #f2f2f2;
-				border-top-color: #f2f2f2;
-				z-index: 5;
-
-			}
-
-			.timer-lt {
-				animation: 10s linear infinite timer-slide-lt;
-				left: 100%;
-
-			}
-
-			.timer-rt {
-				animation: 10s linear infinite timer-slide-rt;
-
-			}
-		}
-
-		.count {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			font-size: 8rem;
-			color: white;
-			text-align: center;
-			line-height: 200px;
-			font-family: sans-serif;
-
-		}
-
-		&.paused {
-
-			.timer-lt,
-			.timer-rt {
-				animation-play-state: paused;
-				transition: all 0.5;
-
-			}
-		}
-
-		&.paused,
-		&:hover {
-
-			.timer-lt,
-			.timer-rt {
-				border: 10px solid rgba(white, .5);
-				border-left-color: transparent;
-				border-top-color: transparent;
-				transition: all 0.5;
-
-			}
-		}
-
-		&.paused {
-			.count {
-				color: rgba(white, 0.5);
-				transition: all 0.5;
-
-			}
-		}
-	}
-} */

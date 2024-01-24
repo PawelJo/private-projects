@@ -16,10 +16,6 @@ async function getRandomUser() {
 
 
 
-
-
-console.log(userID)
-
 function postRating() {
 
 	fetch('http://localhost:8080', {
@@ -40,11 +36,6 @@ function postRating() {
 		.then(res => res.json())
 		.then(data => console.log(data))
 		.catch(err => console.log("Lak wer bist du " + err))
-	/* 	console.log("Fire awayy")
-	console.log(userID)
-	console.log(randomUser.name)
-	console.log(capturedRating) */
-
 }
 
 
@@ -54,31 +45,26 @@ function changeHTML() {
 	const oldText = document.querySelector(".survey-content");
 	/* console.log(oldText) */
 	const newText = document.createElement("div")
+	newText.className = 'survey-content';
 
 	newText.innerHTML =
-		'<p class="survey-text id="first-stage">Danke für Ihre Bewertung. Teilen Sie uns gerne mit, was noch verbessert werden muss.</p>'
+		'<div class="survey-content"><p class="survey-text id="first-stage">Danke für Ihre Bewertung. Teilen Sie uns gerne mit, was noch verbessert werden muss.</p><p class="survey-text-rating">Du hast uns mit ' + capturedRating + ' bewertet.</p><button class="link-button" onClick="killTimer(); changeBackHTML()">Zurück und neubewerten.</button><div id="countdown" class="countdown"></div></div>'
 
 	const counter = document.createElement('div');
-	counter.innerHTML = '<div id="countdown"></div>'
+	counter.innerHTML = ''
 
 	const ratingSelectedText = document.createElement('p')
-	ratingSelectedText.innerHTML =
+	ratingSelectedText.innerHTML = ''
 
-		/* 				'`<p class="survey-text">`Du hast uns mit ${capturedRating} bewertet.+ <a href="http://127.0.0.1:5500/">Zurück und neubewerten.</a></p>`' */
+	oldText.replaceWith(newText)
 
-
-		'<p class="survey-text">Du hast uns mit ' + capturedRating + ' bewertet.</p><button class="link-button" onClick="killTimer(); changeBackHTML()">Zurück und neubewerten.</button>'
-
-	oldText.replaceWith(newText, ratingSelectedText, counter)
-
-	console.log(`Du hast uns mit ${capturedRating} bewertet.`)
 	timerManagement();
 
 }
 
 
 function killTimer() {
-	clearInterval(downloadTimer)
+	clearInterval(countdownTimer)
 }
 
 function changeBackHTML() {
@@ -156,7 +142,7 @@ function changeBackHTML() {
 	document.body.append(newBody)
 
 
-	/* console.log(Body) */
+
 }
 
 function numberChosen() {
@@ -166,9 +152,6 @@ function numberChosen() {
 
 		document.querySelector('input[name="rating"]:checked').value;
 
-	/* console.log(capturedRating) */
-
-
 	changeHTML()
 
 
@@ -177,27 +160,22 @@ function numberChosen() {
 
 
 
-
-
-// Helper Function for navigation
-
 function changeBack() {
 
 
 	changeBackHTML();
 }
 
-let downloadTimer;
+let countdownTimer;
 
 function timerManagement() {
-	let timeleft = 10000;
-	downloadTimer = setInterval(function () {
+	let timeleft = 3;
+	countdownTimer = setInterval(function () {
 
 		if (timeleft <= 0) {
-			clearInterval(downloadTimer);
+			clearInterval(countdownTimer);
 
 
-			/* window.location.replace("http://127.0.0.1:5500/evaluation.html"); */
 
 
 			const toBeRemoved = document.querySelector("#first-stage")
